@@ -118,19 +118,49 @@ export const Header = () => {
                             desk:gap-14"
                         >
                             <li>
-                                <Link href={"#about"} onClick={(e) => handleNavLinkClick(e)}>About</Link>
+                                <Link 
+                                    href={"#about"} 
+                                    onClick={(e) => handleNavLinkClick(e)} 
+                                    className="border-b-[1px] border-transparent hover:border-white/75 focus:border-white/75 transition-all duration-200 ease-in"
+                                >
+                                        About
+                                </Link>
                             </li>
                             <li>
-                                <Link href={"#services"} onClick={(e) => handleNavLinkClick(e)}>Services</Link>
+                                <Link 
+                                    href={"#services"} 
+                                    onClick={(e) => handleNavLinkClick(e)}
+                                    className="border-b-[1px] border-transparent hover:border-white/75 focus:border-white/75 transition-all duration-200 ease-in"
+                                >
+                                    Services
+                                </Link>
                             </li>
                             <li>
-                                <Link href={"#career"} onClick={(e) => handleNavLinkClick(e)}>Career</Link>
+                                <Link 
+                                    href={"#career"} 
+                                    onClick={(e) => handleNavLinkClick(e)}
+                                    className="border-b-[1px] border-transparent hover:border-white/75 focus:border-white/75 transition-all duration-200 ease-in"
+                                >
+                                    Career
+                                </Link>
                             </li>
                             <li>
-                                <Link href={"#gallery"} onClick={(e) => handleNavLinkClick(e)}>Gallery</Link>
+                                <Link 
+                                    href={"#gallery"} 
+                                    onClick={(e) => handleNavLinkClick(e)}
+                                    className="border-b-[1px] border-transparent hover:border-white/75 focus:border-white/75 transition-all duration-200 ease-in"
+                                >
+                                    Gallery
+                                </Link>
                             </li>
                             <li>
-                                <Link href={"#contacts"} onClick={(e) => handleNavLinkClick(e)}>Contacts</Link>
+                                <Link 
+                                    href={"#contacts"} 
+                                    onClick={(e) => handleNavLinkClick(e)}
+                                    className="border-b-[1px] border-transparent hover:border-white/75 focus:border-white/75 transition-all duration-200 ease-in"
+                                >
+                                    Contacts
+                                </Link>
                             </li>
                         </ul>
                         <button 

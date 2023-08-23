@@ -4,7 +4,7 @@ export const Overlay = ({
     children: React.ReactNode
   }) => {
     return (
-      <div className="bg-overlay">
+      <div className="bg-overlay ">
         {children}
       </div>
     )

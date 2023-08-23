@@ -10,7 +10,7 @@ export const Hero = () => {
                 tab:bg-bg-hero-tab desk:bg-bg-hero-desk"
         >
             <Overlay>
-                <div className="section px-5 pb-14 mx-auto
+                <div className="section px-5 pb-14 
                     tab:px-8 tab:pb-16 tab:h-[410px] tab:relative
                     desk:px-6 desk:pb-20 desk:h-[577px]">
 
@@ -45,6 +45,7 @@ export const Hero = () => {
                             type="button" 
                             className="mx-auto px-16 py-[18px] w-[280px] relative bg-white bg-opacity-10 
                                 uppercase text-center text-lg font-bold leading-[18px]
+                                hover:bg-opacity-20 focus:bg-opacity-20 transition-all duration-200 ease-in
                                 tab:w-auto tab:py-4 desk:w-[294px] desk:text-[32px] desk:leading-[39px] tab:bg-opacity-5
                                 before:w-[42px] before:h-[53px] before:absolute before:top-0 before:left-0 before:bg-mob-button-left before:bg-opacity-100
                                 after:w-[42px] after:h-[53px] after:absolute after:top-0 after:right-0 after:bg-mob-button-right after:bg-opacity-100

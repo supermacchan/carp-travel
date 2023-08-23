@@ -4,12 +4,14 @@ export const About = () => {
     return (
         <section 
             id="about" 
-            className="bg-bg-about-mob bg-cover bg-no-repeat bg-center 
-                tab:bg-bg-about-tab desk:bg-bg-about-desk"
+            className="relative bg-bg-about-mob bg-cover bg-no-repeat bg-center 
+                tab:bg-bg-about-tab desk:bg-bg-about-desk
+                before:w-full before:h-[247px] before:absolute before:top-0 before:left-0 before:right-0 before:bg-section-top-gradient before:opacity-75 desk:before:h-[257px]
+                desk:after:w-full desk:after:h-[257px] desk:after:absolute desk:after:bottom-0 desk:after:left-0 desk:after:right-0 desk:after:bg-section-bottom-gradient desk:after:opacity-50"
         >
             <Overlay>
-                <div className="section px-5 py-[55px] mx-auto text-white
-                    tab:px-8 tab:py-16 tab:h-[697px] tab:relative
+                <div className="section px-5 py-[55px] relative
+                    tab:px-8 tab:py-16 tab:h-[697px]
                     desk:px-6 desk:py-[104px] desk:h-[824px]">
                     <h2 className="title mb-2">
                         Who <span className="font-medium">we are</span>
