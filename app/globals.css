@@ -11,3 +11,15 @@ body {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-rgb));
 }
+
+.section {
+  @apply max-w-screen-lg-mob text-white
+  tab:max-w-screen-tab tab:w-[768px]
+  desk:max-w-screen-desk desk:w-[1280px] 
+}
+
+.title {
+  @apply uppercase text-[40px] font-thin leading-[56px] tracking-[-1.6px]
+  tab:text-[67px] tab:leading-[67px] tab:tracking-[-2.68px]
+  desk:text-[98px] desk:tracking-[-3.92px] desk:leading-[98px]
+}
