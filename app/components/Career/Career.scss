@@ -14,12 +14,16 @@
 }
 
 .policy-checkbox {
+    cursor: pointer;
+
     position: absolute;
     top: 0;
     left: 0;
 
     width: 24px;
     height: 24px;
+
+    transition: all 250ms ease-in;
 
     @media screen and (min-width: 768px) and (max-width: 1279px) {
         width: 22px;
@@ -38,7 +42,6 @@
         opacity: 0;
         visibility: hidden;
     }
-
 }
 
 .policy-checkbox-filled {

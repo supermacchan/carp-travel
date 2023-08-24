@@ -10,7 +10,7 @@ export const CareerForm = () => {
                 Fill out the form right now and join our team!
             </p>
         
-            <form className="flex flex-col tab:w-[464px] tab:grid tab:grid-cols-2 gap-x-5
+            <form className="flex flex-col tab:w-[464px] tab:grid tab:grid-cols-2 tab:gap-x-5
                 desk:w-[606px] desk:pb-2">
                 <div>
                     <label htmlFor="career-name" className="label">
