@@ -26,7 +26,9 @@ const config: Config = {
         // 'bg-services-3': 'url("/images/bg-services-3@2x.jpg")',
         // 'bg-services-4': 'url("/images/bg-services-4@2x.jpg")',
         // 'bg-services-5': 'url("/images/bg-services-5@2x.jpg")',
-        'bg-career': 'url("/images/bg-career@2x.jpg")',
+        'bg-career-mob': 'url("/images/bg-career-mob@2x.jpg")',
+        'bg-career-tab': 'url("/images/bg-career-tab@2x.jpg")',
+        'bg-career-desk': 'url("/images/bg-career-desk@2x.jpg")',
         'bg-gallery': 'url("/images/bg-gallery@2x.jpg")',
         'bg-contacts': 'url("/images/bg-contacts@2x.jpg")',
         'mob-button-left': 'url("/icons/mob-btn-fr-left.svg")',
@@ -49,7 +51,8 @@ const config: Config = {
       current: 'currentColor',
       'error-red': '#FF5757',
       'white': '#FFF',
-      'overlay': 'rgba(2, 15, 8, 0.50)'
+      'overlay': 'rgba(2, 15, 8, 0.50)',
+      'career-form-overlay': 'rgba(2, 15, 8, 0.75)'
     }
   },
   plugins: [],

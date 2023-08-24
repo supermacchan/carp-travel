@@ -24,7 +24,7 @@ export const Services = () => {
     return (
         <section 
             id="services"
-            className="relative bg-cover bg-no-repeat bg-center transition-all ease-in duration-500
+            className="relative bg-cover bg-no-repeat bg-center transition-all ease-in duration-500 delay-100
                 before:w-full before:h-[291px] before:absolute before:top-0 before:left-0 before:right-0 before:bg-section-top-gradient before:opacity-75 
                 tab:before:h-[247px] desk:before:h-[241px] desk:before:opacity-25 
                 after:w-full after:h-[291px] after:absolute after:bottom-0 after:left-0 after:right-0 after:bg-section-bottom-gradient after:opacity-75
@@ -32,7 +32,7 @@ export const Services = () => {
             style={{backgroundImage: `url(/images/${background})`}}
         >
             <Overlay>
-                <div className="section px-5 pt-[54px] pb-[56] h-[851px] relative
+                <div className="section px-5 pt-[54px] pb-[56px] h-[851px] relative
                     tab:px-8 tab:py-16 tab:h-[621px]
                     desk:px-6 desk:py-[104px] desk:h-[779px]">
                     <h2 className="title mb-6 tab:mb-0">
@@ -41,7 +41,9 @@ export const Services = () => {
 
                     <div className=" mb-[13px] text-right text-[43px] font-thin leading-[43px]
                         tab:mb-0 tab:absolute tab:top-16 tab:left-[515px] tab:text-[67px] tab:leading-[67px]
-                        desk:top-[104px] desk:left-[644px] desk:text-[98px] desk:leading-[98px] ">
+                        desk:top-[104px] desk:left-[644px] desk:text-[98px] desk:leading-[98px] "
+                    >
+
                         0{slideNum}/
                         <span className="opacity-20">0{services.length}</span>
                     </div>
@@ -76,7 +78,7 @@ export const Services = () => {
                                 onClick={e => handleMenuOptionSelect(e)}
                                 className={options.indexOf(o) + 1 === slideNum 
                                     ? 'ml-[18px] relative font-medium opacity-100 before:w-[9px] before:h-[9px] before:absolute before:left-[-18px] before:top-1/2 before:translate-y-[-50%] before:bg-service-select cursor-pointer' 
-                                    : 'opacity-50 cursor-pointer hover:opacity-100 hover:ml-2 transition-all ease-in duration-200'
+                                    : 'opacity-50 cursor-pointer hover:opacity-100 hover:ml-2 focus:opacity-100 focus:ml-2 transition-all ease-in duration-200'
                                 }
                             >
                                 {o}
