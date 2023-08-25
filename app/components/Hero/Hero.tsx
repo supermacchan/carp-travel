@@ -9,7 +9,7 @@ export const Hero = () => {
                 bg-bg-hero-mob bg-cover bg-no-repeat bg-center 
                 tab:bg-bg-hero-tab desk:bg-bg-hero-desk"
         >
-            <Overlay>
+            <Overlay overlay="overlay">
                 <div className="section px-5 pb-14 
                     tab:px-8 tab:pb-16 tab:h-[410px] tab:relative
                     desk:px-6 desk:pb-20 desk:h-[577px]">

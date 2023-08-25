@@ -31,7 +31,7 @@ export const Services = () => {
                 tab:after:h-[247px] desk:after:h-[241px] desk:after:opacity-25"
             style={{backgroundImage: `url(/images/${background})`}}
         >
-            <Overlay>
+            <Overlay overlay="overlay">
                 <div className="section px-5 pt-[54px] pb-[56px] h-[851px] relative
                     tab:px-8 tab:py-16 tab:h-[621px]
                     desk:px-6 desk:py-[104px] desk:h-[779px]">
