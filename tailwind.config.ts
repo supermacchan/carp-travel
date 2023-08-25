@@ -41,7 +41,8 @@ const config: Config = {
         'tab-button-right': 'url("/icons/tab-btn-fr-right.svg")',
         'desk-button-left': 'url("/icons/desk-btn-fr-left.svg")',
         'desk-button-right': 'url("/icons/desk-btn-fr-right.svg")',
-        'service-select': 'url("/icons/service-select.svg")'
+        'service-select': 'url("/icons/service-select.svg")',
+        'invalid': 'url("/icons/invalid.svg")'
       },
     },
     screens: {

@@ -34,3 +34,12 @@ body {
 .label {
   @apply mb-1 text-xs font-extralight leading-[24px] tracking-[2.4px]
 }
+
+.validation-error {
+  @apply absolute bottom-[-24px] right-0 text-error-red text-xs font-extralight leading-6 tracking-[2.4px]
+    before:w-[18px] before:h-[18px] before:absolute before:left-[-22px] before:top-1/2 before:translate-y-[-50%] before:bg-invalid
+}
+
+.invalid-input {
+  @apply text-error-red text-opacity-100 z-20
+}
