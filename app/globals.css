@@ -25,10 +25,11 @@ body {
 }
 
 .input {
-  @apply px-2 py-[2px] w-full block bg-white bg-opacity-5 text-white text-[13px] font-extralight leading-6 
-  focus:outline-none focus:bg-opacity-10
+  @apply px-2 py-[2px] w-full block bg-white bg-opacity-5 text-white text-[13px] font-extralight leading-6 outline-none 
+  focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10
   placeholder:text-white placeholder:opacity-[0.2]
   tab:w-[222px] desk:w-[290px] desk:text-[20px] desk:leading-6
+   transition-all ease-in duration-200
 }
 
 .label {

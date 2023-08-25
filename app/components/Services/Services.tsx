@@ -4,10 +4,24 @@ import { useState } from "react"
 import { Overlay } from "../Overlay/Overlay"
 import { SingleService } from "./SingleService"
 import { options, services } from "@/app/utils/staticData/data"
+import { animated, useTransition } from '@react-spring/web'
 
 export const Services = () => {
     const [slideNum, setSlideNum] = useState(1);
     const [background, setBackground] = useState('bg-services-1@2x.jpg');
+
+    const transition = useTransition(slideNum, {
+        exitBeforeEnter: true,
+        from: {
+          opacity: 0,
+        },
+        enter: {
+          opacity: 1,
+        },
+        leave: {
+          opacity: 0,
+        },
+    })
 
     const handleMenuOptionSelect = (e: React.MouseEvent<HTMLLIElement>) => {
         const currentOptionIndex = options.indexOf(e.currentTarget.innerHTML);
@@ -43,8 +57,10 @@ export const Services = () => {
                         tab:mb-0 tab:absolute tab:top-16 tab:left-[515px] tab:text-[67px] tab:leading-[67px]
                         desk:top-[104px] desk:left-[644px] desk:text-[98px] desk:leading-[98px] "
                     >
-
-                        0{slideNum}/
+                        {transition((style, slideNum) => (
+                            <animated.span style={style}>0{slideNum}</animated.span>
+                        ))}
+                        /
                         <span className="opacity-20">0{services.length}</span>
                     </div>
                     
@@ -77,7 +93,7 @@ export const Services = () => {
                                 key={o} 
                                 onClick={e => handleMenuOptionSelect(e)}
                                 className={options.indexOf(o) + 1 === slideNum 
-                                    ? 'ml-[18px] relative font-medium opacity-100 before:w-[9px] before:h-[9px] before:absolute before:left-[-18px] before:top-1/2 before:translate-y-[-50%] before:bg-service-select cursor-pointer' 
+                                    ? 'ml-[18px] relative font-medium opacity-100 before:w-[9px] before:h-[9px] before:absolute before:left-[-18px] before:top-1/2 before:translate-y-[-50%] before:bg-service-select cursor-pointer transition-all ease-in duration-200' 
                                     : 'opacity-50 cursor-pointer hover:opacity-100 hover:ml-2 focus:opacity-100 focus:ml-2 transition-all ease-in duration-200'
                                 }
                             >

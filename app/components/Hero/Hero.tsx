@@ -1,6 +1,14 @@
+"use client"
+
 import { Overlay } from "../Overlay/Overlay"
+import { scrollToSection } from "@/app/utils/scroll"
 
 export const Hero = () => {
+
+    const handleButtonClick = () => {
+        scrollToSection('contacts');
+    }
+
     return (
         <section 
             className="mt-[-105px] pt-[105px]
@@ -53,6 +61,7 @@ export const Hero = () => {
                                 tab:after:w-[35px] tab:after:h-[50px] tab:after:bg-tab-button-right
                                 desk:before:w-[44px] desk:before:h-[71px] desk:before:bg-desk-button-left 
                                 desk:after:w-[44px] desk:after:h-[71px] desk:after:bg-desk-button-right"
+                            onClick={handleButtonClick}
                         >
                             Join now
                         </button>

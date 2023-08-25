@@ -44,6 +44,7 @@ export const ContactInfo = () => {
               href="https://www.facebook.com/"
               rel="noopener noreferrer"
               target="_blank"
+              className="border-b-[1px] border-transparent hover:border-white/75 focus:border-white/75 transition-all duration-200 ease-in"
             >
               facebook
             </a>
@@ -53,6 +54,7 @@ export const ContactInfo = () => {
               href="https://www.instagram.com/"
               rel="noopener noreferrer"
               target="_blank"
+              className="border-b-[1px] border-transparent hover:border-white/75 focus:border-white/75 transition-all duration-200 ease-in"
             >
               instagram
             </a>
@@ -62,6 +64,7 @@ export const ContactInfo = () => {
               href="https://www.youtube.com/"
               rel="noopener noreferrer"
               target="_blank"
+              className="border-b-[1px] border-transparent hover:border-white/75 focus:border-white/75 transition-all duration-200 ease-in"
             >
               youtube
             </a>
@@ -71,6 +74,7 @@ export const ContactInfo = () => {
               href="https://tiktok.com/"
               rel="noopener noreferrer"
               target="_blank"
+              className="border-b-[1px] border-transparent hover:border-white/75 focus:border-white/75 transition-all duration-200 ease-in"
             >
               tiktok
             </a>
