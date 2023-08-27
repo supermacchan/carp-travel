@@ -6,9 +6,9 @@ import { SingleService } from "./SingleService"
 import { options, services } from "@/app/utils/staticData/services"
 import { animated, useTransition } from '@react-spring/web'
 
-export const Services = () => {
-    const [slideNum, setSlideNum] = useState(1);
-    const [background, setBackground] = useState('bg-services-1@2x.jpg');
+export const Services: React.FC = () => {
+    const [slideNum, setSlideNum] = useState<number>(1);
+    const [background, setBackground] = useState<string>('bg-services-1@2x.jpg');
 
     const transition = useTransition(slideNum, {
         exitBeforeEnter: true,

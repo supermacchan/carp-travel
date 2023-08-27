@@ -3,7 +3,7 @@
 import { Overlay } from "../Overlay/Overlay"
 import { scrollToSection } from "@/app/utils/scroll"
 
-export const Hero = () => {
+export const Hero: React.FC = () => {
 
     const handleButtonClick = () => {
         scrollToSection('contacts');

@@ -7,9 +7,9 @@ import { animated, useTransition } from '@react-spring/web'
 
 import { scrollToSection } from "@/app/utils/scroll"
 
-export const Header = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
+export const Header: React.FC = () => {
+    const [menuOpen, setMenuOpen] = useState<boolean>(false);
+    const [isMobile, setIsMobile] = useState<boolean>(false);
 
     const [windowWidth, setWindowWidth] = useState<number | null>(null);
 
@@ -25,7 +25,7 @@ export const Header = () => {
         },
     })
     
-    // tracking window size 
+    // tracking window size for changing orientation on mobile devices
     useEffect(() => {
         setWindowWidth(window.innerWidth);
 

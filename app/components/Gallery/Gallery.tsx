@@ -11,7 +11,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/scss/navigation';
 import './Swiper.scss';
 
-export const Gallery = () => {
+export const Gallery: React.FC = () => {
     const [swiperReady, setSwiperReady] = useState(false);
     const prevBtnRef = useRef<HTMLButtonElement | null>(null);
     const nextBtnRef = useRef<HTMLButtonElement | null>(null);
@@ -33,12 +33,30 @@ export const Gallery = () => {
                 desk:after:h-[302px]"
         >
             <div className="bg-overlay-75 tab:bg-overlay-85">
+                {/* content */}
                 <div className="section px-5 py-[56px] relative z-10
-                    tab:px-8 tab:pt-16 tab:pb-[58px] desk:py-[104px] desk:px-0 desk:h-[818px]">
+                    tab:px-8 tab:pt-16 tab:pb-[58px] desk:py-[104px] tab:h-[575px] desk:px-0 desk:h-[818px]">
                     <h2 className="title mb-6 tab:mb-16">
                         Our <span className="font-medium">Gallery</span>
                     </h2>
                     
+                    {/* mobile gallery */}
+                    <ul className="flex flex-col gap-6 items-center tab:hidden">
+                        {galleryItems.map(img => 
+                            <li key={img} className="w-[280px] h-[187px]">
+                                <Image 
+                                    width={280}
+                                    height={187}
+                                    src={img}
+                                    alt="mountains gallery slide"
+                                    loading="lazy"
+                                    className="w-[280px] h-[187px] object-cover"
+                                />
+                            </li>
+                        )}
+                    </ul>
+
+                    {/* swiper for tablets and desktops */}
                     <div className="hidden tab:block">
                         <div className={`hidden tab:px-[38px] tab:w-[704px] tab:absolute tab:z-20 
                                 tab:flex tab:justify-between tab:bottom-[81px]  
@@ -84,22 +102,22 @@ export const Gallery = () => {
                                 }}
                                 breakpoints={{
                                     768: {
-                                    coverflowEffect: {
-                                        rotate: 0,
-                                        stretch: 50,
-                                        depth: 0,
-                                        modifier: 1.32,
-                                        scale: 0.45,
-                                    },
+                                        coverflowEffect: {
+                                            rotate: 0,
+                                            stretch: 50,
+                                            depth: 0,
+                                            modifier: 1.32,
+                                            scale: 0.45,
+                                        },
                                     },
                                     1280: {
-                                    coverflowEffect: {
-                                        rotate: 0,
-                                        stretch: 120,
-                                        depth: 0,
-                                        modifier: 1.32,
-                                        scale: 0.65,
-                                    },
+                                        coverflowEffect: {
+                                            rotate: 0,
+                                            stretch: 120,
+                                            depth: 0,
+                                            modifier: 1.32,
+                                            scale: 0.65,
+                                        },
                                     }
                                 }}
                                 navigation={{
@@ -110,7 +128,7 @@ export const Gallery = () => {
                             >
                                 {galleryItems.map(img => 
                                     <SwiperSlide key={img}>
-                                        {({ isActive }) => (
+                                        {({ isActive }: {isActive: boolean}) => (
                                             <li
                                                 className={`relative right-8 desk:right-[-13px] w-[415px] desk:w-[606px] h-[294px] desk:h-[429px] ${
                                                     isActive
@@ -137,21 +155,6 @@ export const Gallery = () => {
                         }
                         
                     </div>
-
-                    <ul className="flex flex-col gap-6 items-center tab:hidden">
-                        {galleryItems.map(img => 
-                            <li key={img} className="w-[280px] h-[187px]">
-                                <Image 
-                                    width={280}
-                                    height={187}
-                                    src={img}
-                                    alt="mountains gallery slide"
-                                    loading="lazy"
-                                    className="w-[280px] h-[187px] object-cover"
-                                />
-                            </li>
-                        )}
-                    </ul>
 
                 </div>
             </div>

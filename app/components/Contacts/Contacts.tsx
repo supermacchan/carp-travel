@@ -2,7 +2,7 @@ import { ContactForm } from "./ContactForm"
 import { ContactInfo } from "./ContactInfo"
 import { Overlay } from "../Overlay/Overlay"
 
-export const Contacts = () => {
+export const Contacts: React.FC = () => {
     return (
         <section id="contacts" className="relative bg-bg-contacts-mob bg-cover bg-no-repeat bg-center 
             tab:bg-bg-contacts-tab desk:bg-bg-contacts-desk
@@ -11,6 +11,7 @@ export const Contacts = () => {
             after:w-full after:h-[247px] after:absolute after:bottom-0 after:left-0 after:right-0 after:bg-section-bottom-gradient after:opacity-75
             desk:after:h-[293px]">
             <Overlay overlay="overlay-75">
+                {/* content */}
                 <div className="section px-5 pt-[56px] pb-[54px] relative z-10
                     tab:px-8 tab:py-16 desk:py-[104px] desk:px-6">
                     <h2 className="title mb-9 tab:mb-10 desk:mb-[74px]">

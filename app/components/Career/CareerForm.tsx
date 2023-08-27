@@ -7,10 +7,11 @@ import { useForm } from "react-hook-form";
 
 import { CareerFormData } from "@/app/utils/types";
 
-export const CareerForm = () => {
+export const CareerForm: React.FC = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm<CareerFormData>();
     
     const onSubmit = (data: CareerFormData) => {
+        // data logged for development purposes
         console.log(data);
         reset();
         toast.success(`Thanks, ${data.name}, your message was sent! We will get back to you within 24 hours.`);

@@ -7,11 +7,11 @@ import { CareerForm } from "./CareerForm"
 
 import './Career.scss'
 
-export const Career = () => {
-    const [isMobile, setIsMobile] = useState(false);
+export const Career: React.FC = () => {
+    const [isMobile, setIsMobile] = useState<boolean>(false);
     const [windowWidth, setWindowWidth] = useState<number | null>(null);
 
-    // tracking window size 
+    // tracking window size for changing orientation on mobile devices
     useEffect(() => {
       setWindowWidth(window.innerWidth);
 
@@ -49,6 +49,7 @@ export const Career = () => {
                     desk:after:hidden "
             >
                 <div className="bg-overlay tab:bg-overlay-75">
+                    {/* content */}
                     <div className="section px-5 py-[56px] relative z-10
                         tab:px-8 tab:py-16 desk:py-[104px] desk:px-6 desk:h-[818px]">
                         <CareerDescription />

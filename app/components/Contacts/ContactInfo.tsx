@@ -1,4 +1,4 @@
-export const ContactInfo = () => {
+export const ContactInfo: React.FC = () => {
   return (
     <ul
       className="pb-[12px] ml-auto w-[280px] 

@@ -6,10 +6,11 @@ import { useForm } from "react-hook-form";
 
 import { ContactFormData } from "@/app/utils/types";
 
-export const ContactForm = () => {
+export const ContactForm: React.FC = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>();
     
     const onSubmit = (data: ContactFormData) => {
+        // data logged for development purposes
         console.log(data);
         reset();
         toast.success(`Thanks, ${data.name}, your message was sent! We will get back to you within 24 hours.`);

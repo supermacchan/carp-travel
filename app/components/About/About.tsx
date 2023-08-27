@@ -1,6 +1,6 @@
 import { Overlay } from "../Overlay/Overlay"
 
-export const About = () => {
+export const About: React.FC = () => {
     return (
         <section 
             id="about" 
@@ -10,9 +10,11 @@ export const About = () => {
                 desk:after:w-full desk:after:h-[257px] desk:after:absolute desk:after:bottom-0 desk:after:left-0 desk:after:right-0 desk:after:bg-section-bottom-gradient desk:after:opacity-50"
         >
             <Overlay overlay="overlay">
+                {/* content */}
                 <div className="section px-5 py-[55px] relative
                     tab:px-8 tab:py-16 tab:h-[697px]
                     desk:px-6 desk:py-[104px] desk:h-[824px]">
+
                     <h2 className="title mb-2">
                         Who <span className="font-medium">we are</span>
                     </h2>
@@ -41,7 +43,7 @@ export const About = () => {
                         desk:w-[605px] desk:bottom-[104px] desk:left-6 desk:text-lg desk:leading-6">
                         <span className="font-medium">We use methods</span> that are time-tested and proven. Our expert guides with in-depth knowledge of the Carpathian landscapes lead you safely through the mysteries of these mountains. 
                     </p>
-                    </div>
+                </div>
             </Overlay>
         </section>
     )

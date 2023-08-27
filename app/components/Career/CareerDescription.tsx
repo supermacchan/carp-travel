@@ -1,4 +1,4 @@
-export const CareerDescription = () => {
+export const CareerDescription: React.FC = () => {
     return (
         <>
             <h2 className="title mb-6 tab:mb-0">
