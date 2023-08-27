@@ -32,7 +32,7 @@ export const ContactForm = () => {
                         type="text"
                         autoComplete="name"
                         placeholder="John Smith"
-                        className={`input ${errors.name ? 'invalid-input' : ''}`}
+                        className={`input ${errors.name ? 'invalid-input' : ''} desk:w-[293px]`}
                         {...register("name", { required: true })}
                     />
                     {errors.name && 
@@ -51,7 +51,7 @@ export const ContactForm = () => {
                         type="email" 
                         autoComplete="email"
                         placeholder="johnsmith@email.com"
-                        className={`input ${errors.email ? 'invalid-input' : ''}`}
+                        className={`input ${errors.email ? 'invalid-input' : ''} desk:w-[293px]`}
                         {...register("email", { 
                             required: true,
                             pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
@@ -80,7 +80,7 @@ export const ContactForm = () => {
 
                 <button 
                     type="submit" 
-                    className="ml-auto uppercase text-3xl font-medium leading-8">
+                    className="ml-auto uppercase text-3xl font-medium leading-8 desk:mr-2">
                     Send
                 </button>
             </div>
