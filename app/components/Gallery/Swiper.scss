@@ -1,0 +1,18 @@
+.swiper {
+    width: 100%;
+  }
+  
+.swiper-slide {
+  width: 415px;
+  height: 294px;
+
+  @media screen and (min-width: 1280px) {
+    width: 606px;
+    height: 429px;
+  }
+}
+  
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}

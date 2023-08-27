@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Overlay } from "../Overlay/Overlay"
 import { SingleService } from "./SingleService"
-import { options, services } from "@/app/utils/staticData/data"
+import { options, services } from "@/app/utils/staticData/services"
 import { animated, useTransition } from '@react-spring/web'
 
 export const Services = () => {
