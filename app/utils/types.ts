@@ -14,6 +14,12 @@ export type ServiceProps = {
     text: string;
 }
 
+export type ServiceMenuProps = {
+    slideNum: number,
+    promo: string,
+    handleMenuOptionSelect: (e: React.MouseEvent<HTMLLIElement>) => void
+}
+
 export type CareerFormData = {
     name: string;
     email: string;
