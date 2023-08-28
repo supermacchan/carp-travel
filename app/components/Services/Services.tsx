@@ -1,16 +1,27 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Overlay } from "../Overlay/Overlay"
 import { SingleService } from "./SingleService"
 import { options, services } from "@/app/utils/staticData/services"
 import { animated, useTransition } from '@react-spring/web'
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import './Swiper.scss'
+
+import { EffectFade } from 'swiper/modules';
+
 export const Services: React.FC = () => {
     const [slideNum, setSlideNum] = useState<number>(1);
-    const [background, setBackground] = useState<string>('bg-services-1@2x.jpg');
+    const [background, setBackground] = useState<string>(services[0].bg);
+    const [promo, setPromo] = useState<string>(services[0].promo);
 
-    const transition = useTransition(slideNum, {
+    const swiperRef: any = useRef<typeof Swiper | null>(null);
+
+    const slideNumTransition = useTransition(slideNum, {
         exitBeforeEnter: true,
         from: {
           opacity: 0,
@@ -21,19 +32,55 @@ export const Services: React.FC = () => {
         leave: {
           opacity: 0,
         },
+        config: (item, index, phase) => ({
+            duration: phase === 'enter' ? 700 : 500, 
+        }),
+    })
+
+    const promoTransition = useTransition(promo, {
+        exitBeforeEnter: true,
+        from: {
+          opacity: 0,
+        },
+        enter: {
+          opacity: 1,
+        },
+        leave: {
+          opacity: 0,
+        },
+        config: (item, index, phase) => ({
+            duration: phase === 'enter' ? 1000 : 0, 
+        }),
     })
 
     const handleMenuOptionSelect = (e: React.MouseEvent<HTMLLIElement>) => {
         const currentOptionIndex = options.indexOf(e.currentTarget.innerHTML);
+
+        // double-click on the selected option
+        if (currentOptionIndex === -1) {
+            return;
+        }
+
         const currentOptionId = currentOptionIndex + 1;
         const currentSlide = services.find(s => s.id === currentOptionId);
 
         setSlideNum(currentOptionId);
 
+        slideTo(currentOptionIndex);
+
         if(currentSlide) {
             setBackground(currentSlide.bg);
+            setPromo(currentSlide.promo);
         }
     }
+
+    const slideTo = (index: number) => {
+        if (swiperRef) {
+            const swiperInstance = swiperRef.current.swiper;
+            swiperInstance.slideTo(index, 1500);
+        }
+    };
+
 
     return (
         <section 
@@ -57,47 +104,66 @@ export const Services: React.FC = () => {
                         tab:mb-0 tab:absolute tab:top-16 tab:left-[515px] tab:text-[67px] tab:leading-[67px]
                         desk:top-[104px] desk:left-[644px] desk:text-[98px] desk:leading-[98px] "
                     >
-                        {transition((style, slideNum) => (
-                            <animated.span style={style}>0{slideNum}</animated.span>
+                        0
+                        {slideNumTransition((style, slideNum) => (
+                            <animated.span style={style}>{slideNum}</animated.span>
                         ))}
                         /
                         <span className="opacity-20">0{services.length}</span>
                     </div>
                     
-                    {/* temp */}
-                    <SingleService 
-                        image={services[slideNum - 1].image}
-                        promo={services[slideNum - 1].promo}
-                        title={services[slideNum - 1].title}
-                        text={services[slideNum - 1].text}
-                    />
-                    
-                    {/* <ul>
+                    <Swiper
+                        ref={swiperRef}
+                        effect={'fade'}
+                        slidesPerView={1}
+                        fadeEffect={{
+                            crossFade: true,
+                          }}
+                        speed={1500}
+                        allowTouchMove={false}
+                        modules={[EffectFade]}
+                        grabCursor={false}
+                        className="tab:w-full tab:h-full"
+                    >
                         {services.map(s => 
-                            <SingleService
-                                key={s.id}
-                                image={s.image}
-                                promo={s.promo}
-                                title={s.title}
-                                text={s.text}
-                            />
+                            <SwiperSlide key={s.id}>
+                                <SingleService
+                                    image={s.image}
+                                    promo={s.promo}
+                                    title={s.title}
+                                    text={s.text}
+                                />
+                            </SwiperSlide>
                         )}
-                    </ul> */}
+                    </Swiper>
 
                     {/* menu */}
-                    <ul className="w-[187px] relative z-10 flex flex-col gap-6 mt-6 text-xl font-extralight leading-[17px] uppercase
-                        tab:mt-0 tab:w-[204px] tab:absolute tab:top-[182px] tab:left-[515px] tab:gap-4 tab:text-[22px] tab:leading-[18px]
-                        desk:w-[255px] desk:left-[644px] desk:gap-6 desk:top-[244px] desk:text-[28px] desk:leading-[24px]">
+                    <ul 
+                        className="w-[187px] absolute bottom-[210px] left-5 z-10 flex flex-col gap-4 text-xl font-extralight leading-[17px] uppercase
+                        tab:w-[204px] tab:absolute tab:bottom-auto tab:top-[182px] tab:left-[515px] tab:text-[22px] tab:leading-[18px]
+                        desk:w-[255px] desk:left-[644px] desk:gap-6 desk:top-[244px] desk:text-[28px] desk:leading-[24px]"
+                    >
                         {options.map(o => 
                             <li 
                                 key={o} 
                                 onClick={e => handleMenuOptionSelect(e)}
                                 className={options.indexOf(o) + 1 === slideNum 
-                                    ? 'ml-[18px] relative font-medium opacity-100 before:w-[9px] before:h-[9px] before:absolute before:left-[-18px] before:top-1/2 before:translate-y-[-50%] before:bg-service-select cursor-pointer transition-all ease-in duration-200' 
+                                    ? 'active-service opacity-100'
                                     : 'opacity-50 cursor-pointer hover:opacity-100 hover:ml-2 focus:opacity-100 focus:ml-2 transition-all ease-in duration-200'
                                 }
                             >
                                 {o}
+
+                                {options.indexOf(o) + 1 === slideNum && 
+                                    promoTransition((style, promo) => (
+                                        <animated.span 
+                                            style={style}
+                                            className="hidden desk:block desk:w-[293px] desk:absolute desk:top-0 desk:right-[-335px] desk:text-xs desk:font-extralight desk:leading-6 desk:tracking-[2.4px] desk:capitalize"
+                                        >
+                                            {promo}
+                                        </animated.span>
+                                    ))
+                                }
                             </li>
                         )}
                     </ul>

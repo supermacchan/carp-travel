@@ -44,3 +44,9 @@ body {
 .invalid-input {
   @apply text-error-red text-opacity-100 z-20
 }
+
+.active-service {
+  @apply ml-[18px] relative font-medium
+  before:w-[9px] before:h-[9px] before:absolute before:left-[-18px] before:top-1/2 before:translate-y-[-50%] 
+  before:bg-service-select cursor-pointer transition-all ease-in duration-200 
+}
