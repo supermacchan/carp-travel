@@ -10,6 +10,20 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'CarpTravel',
   description: "Uncover Carpathian’s Secrets",
+  icons: [
+    {
+      url: '/icons/favicon-dark.svg',
+      media: '(prefers-color-scheme: dark)',
+      rel: 'icon',
+      type: 'image/svg',
+    },
+    {
+      url: '/icons/favicon-light.svg',
+      media: '(prefers-color-scheme: light)',
+      rel: 'icon',
+      type: 'image/svg',
+    },
+  ],
 }
 
 export default function RootLayout({
