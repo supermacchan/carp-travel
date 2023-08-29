@@ -1,7 +1,6 @@
 "use client"
 
 import { toast } from "react-hot-toast"
-
 import { useForm } from "react-hook-form";
 
 import { ContactFormData } from "@/app/utils/types";
@@ -10,7 +9,7 @@ export const ContactForm: React.FC = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>();
     
     const onSubmit = (data: ContactFormData) => {
-        // data logged for development purposes
+        // data temporarily logged for development purposes & data processing check
         console.log(data);
         reset();
         toast.success(`Thanks, ${data.name}, your message was sent! We will get back to you within 24 hours.`);
@@ -18,13 +17,16 @@ export const ContactForm: React.FC = () => {
 
     return (
         <form 
-            className="flex flex-col tab:flex-row tab:gap-5 
-            desk:w-1/2 desk:flex-col desk:gap-10"
+            className="flex flex-col 
+                tab:flex-row tab:gap-5 
+                desk:w-1/2 desk:flex-col desk:gap-10"
             onSubmit={handleSubmit(onSubmit)}
+            aria-label="Contact"
             noValidate
         >
             <div className="flex flex-col desk:flex-row desk:gap-5">
-                <div className="flex flex-col relative mb-6 desk:mb-0">
+
+                <div className="mb-6 flex flex-col relative desk:mb-0">
                     <label htmlFor="contact-name" className="label">
                         Full name
                     </label>
@@ -33,6 +35,7 @@ export const ContactForm: React.FC = () => {
                         type="text"
                         autoComplete="name"
                         placeholder="John Smith"
+                        aria-label="Name"
                         className={`input ${errors.name ? 'invalid-input' : ''} desk:w-[293px]`}
                         {...register("name", { required: true })}
                     />
@@ -43,7 +46,7 @@ export const ContactForm: React.FC = () => {
                     }
                 </div>
                 
-                <div className="flex flex-col relative mb-6 tab:mb-0 ">   
+                <div className="mb-6 flex flex-col relative tab:mb-0">   
                     <label htmlFor="contact-mail" className="label">
                         E-mail
                     </label>
@@ -52,6 +55,7 @@ export const ContactForm: React.FC = () => {
                         type="email" 
                         autoComplete="email"
                         placeholder="johnsmith@email.com"
+                        aria-label="Email"
                         className={`input ${errors.email ? 'invalid-input' : ''} desk:w-[293px]`}
                         {...register("email", { 
                             required: true,
@@ -73,15 +77,17 @@ export const ContactForm: React.FC = () => {
                 <textarea
                     id="contact-message"
                     autoComplete="off"
-                    className="input resize-none mb-4 min-h-[193px] 
-                    tab:w-[463px] tab:min-h-[221px]
-                    desk:w-[607px] desk:min-h-[174px] desk:mb-6"
+                    aria-label="Text message"
+                    className="input mb-4 min-h-[193px] resize-none  
+                        tab:w-[463px] tab:min-h-[221px]
+                        desk:w-[607px] desk:min-h-[174px] desk:mb-6"
                     {...register("message")}
                 ></textarea>
 
                 <button 
                     type="submit" 
-                    className="ml-auto uppercase text-3xl font-medium leading-8 desk:mr-2">
+                    className="ml-auto uppercase text-3xl font-medium leading-8 desk:mr-2"
+                >
                     Send
                 </button>
             </div>

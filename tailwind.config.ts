@@ -10,8 +10,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'header-gradient': 'linear-gradient(180deg, rgba(0, 24, 38, 0.5) 0%, rgba(0, 37, 49, 0.00) 100%)',
         'section-top-gradient': 'linear-gradient(180deg, #002426 0%, rgba(0, 37, 49, 0.00) 100%)',
         'section-bottom-gradient': 'linear-gradient(0deg, #002426 0%, rgba(0, 37, 49, 0.00) 100%)',
@@ -21,11 +20,6 @@ const config: Config = {
         'bg-about-mob': 'url("/images/bg-about-mob@2x.jpg")',
         'bg-about-tab': 'url("/images/bg-about-tab@2x.jpg")',
         'bg-about-desk': 'url("/images/bg-about-desk@2x.jpg")',
-        // 'bg-services-1': 'url("/images/bg-services-1@2x.jpg")',
-        // 'bg-services-2': 'url("/images/bg-services-2@2x.jpg")',
-        // 'bg-services-3': 'url("/images/bg-services-3@2x.jpg")',
-        // 'bg-services-4': 'url("/images/bg-services-4@2x.jpg")',
-        // 'bg-services-5': 'url("/images/bg-services-5@2x.jpg")',
         'bg-career-mob': 'url("/images/bg-career-mob@2x.jpg")',
         'bg-career-tab': 'url("/images/bg-career-tab@2x.jpg")',
         'bg-career-desk': 'url("/images/bg-career-desk@2x.jpg")',

@@ -1,29 +1,17 @@
 "use client"
 
 import Image from "next/image"
-
 import { useState, useEffect } from "react"
-import { animated, useTransition } from '@react-spring/web'
 
 import { scrollToSection } from "@/app/utils/scroll"
+
+import { HeaderNav } from "./HeaderNav"
 
 export const Header: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
     const [isMobile, setIsMobile] = useState<boolean>(false);
 
     const [windowWidth, setWindowWidth] = useState<number | null>(null);
-
-    const transition = useTransition(menuOpen, {
-        from: {
-          opacity: 0,
-        },
-        enter: {
-          opacity: 1,
-        },
-        leave: {
-          opacity: 0,
-        },
-    })
     
     // tracking window size for changing orientation on mobile devices
     useEffect(() => {
@@ -32,33 +20,33 @@ export const Header: React.FC = () => {
         window.addEventListener('resize', handleResize);
 
         return () => {
-        window.removeEventListener('resize', handleResize);
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
     //  device check
     useEffect(() => {
         if (windowWidth && windowWidth >= 768) {
-        setMenuOpen(true);
-        setIsMobile(false);
+            setMenuOpen(true);
+            setIsMobile(false);
         }
 
         if (windowWidth && windowWidth < 768) {
-        setMenuOpen(false);
-        setIsMobile(true);
+            setMenuOpen(false);
+            setIsMobile(true);
         }
     }, [windowWidth]);
 
     // no scroll on body witn mobile menu opened
     useEffect(() => {
         if (isMobile && menuOpen) {
-        document.body.style.overflow = 'hidden';
-        return;
+            document.body.style.overflow = 'hidden';
+            return;
         }
 
         if (isMobile && !menuOpen) {
-        document.body.style.overflow = 'visible';
-        return;
+            document.body.style.overflow = 'visible';
+            return;
         }
     }, [isMobile, menuOpen]);
 
@@ -92,7 +80,7 @@ export const Header: React.FC = () => {
                     width={61}
                     height={22}
                     src="/icons/logo.svg"
-                    alt="logo"
+                    alt="CarpTravel logo"
                 />
 
                 {/* mob menu button */}
@@ -105,71 +93,12 @@ export const Header: React.FC = () => {
                 </button>
 
                 {/* navigation */}
-                {transition((style, menuOpen) => (<>
-                    {menuOpen && 
-                        <animated.nav 
-                            className="w-screen h-screen absolute top-0 left-0 
-                            grid place-content-center 
-                            bg-[rgb(1,10,5)] bg-opacity-[0.75] backdrop-blur-[25px]
-                            tab:static tab:w-auto tab:h-auto tab:bg-transparent tab:backdrop-blur-none"
-                            style={style}
-                        >
-                            <ul 
-                                className="flex flex-col items-center gap-12 text-lg font-normal tracking-[1.8px] text-white
-                                tab:flex-row tab:gap-6 tab:text-sm tab:tracking-[1.4px]
-                                desk:gap-14"
-                            >
-                                <li>
-                                    <button 
-                                        onClick={(e) => handleNavLinkClick(e)} 
-                                        className="border-b-[1px] border-transparent hover:border-white/75 focus:border-white/75 transition-all duration-200 ease-in"
-                                    >
-                                            About
-                                    </button>
-                                </li>
-                                <li>
-                                    <button 
-                                        onClick={(e) => handleNavLinkClick(e)}
-                                        className="border-b-[1px] border-transparent hover:border-white/75 focus:border-white/75 transition-all duration-200 ease-in"
-                                    >
-                                        Services
-                                    </button>
-                                </li>
-                                <li>
-                                    <button 
-                                        onClick={(e) => handleNavLinkClick(e)}
-                                        className="border-b-[1px] border-transparent hover:border-white/75 focus:border-white/75 transition-all duration-200 ease-in"
-                                    >
-                                        Career
-                                    </button>
-                                </li>
-                                <li>
-                                    <button 
-                                        onClick={(e) => handleNavLinkClick(e)}
-                                        className="border-b-[1px] border-transparent hover:border-white/75 focus:border-white/75 transition-all duration-200 ease-in"
-                                    >
-                                        Gallery
-                                    </button>
-                                </li>
-                                <li>
-                                    <button 
-                                        onClick={(e) => handleNavLinkClick(e)}
-                                        className="border-b-[1px] border-transparent hover:border-white/75 focus:border-white/75 transition-all duration-200 ease-in"
-                                    >
-                                        Contacts
-                                    </button>
-                                </li>
-                            </ul>
-                            <button 
-                                type="button"
-                                onClick={toggleMobileMenu}
-                                className="absolute top-[43px] right-5 text-sm font-normal tracking-[1.4px] uppercase text-white tab:hidden"
-                            >
-                                Close
-                            </button>
-                        </animated.nav>
-                    }
-                </>))}
+                <HeaderNav 
+                    menuOpen={menuOpen}
+                    handleNavLinkClick={handleNavLinkClick}
+                    toggleMobileMenu={toggleMobileMenu}
+                />
+
             </div>
         </header>
     )

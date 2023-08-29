@@ -50,3 +50,9 @@ body {
   before:w-[9px] before:h-[9px] before:absolute before:left-[-18px] before:top-1/2 before:translate-y-[-50%] 
   before:bg-service-select cursor-pointer transition-all ease-in duration-200 
 }
+
+.nav-link {
+  @apply border-b-[1px] border-transparent 
+  hover:border-white/75 focus:border-white/75 
+  transition-all duration-200 ease-in
+}

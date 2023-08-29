@@ -1,8 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import { toast } from "react-hot-toast"
 
+import { toast } from "react-hot-toast"
 import { useForm } from "react-hook-form";
 
 import { CareerFormData } from "@/app/utils/types";
@@ -11,7 +11,7 @@ export const CareerForm: React.FC = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm<CareerFormData>();
     
     const onSubmit = (data: CareerFormData) => {
-        // data logged for development purposes
+        // data temporarily logged for development purposes & data processing check
         console.log(data);
         reset();
         toast.success(`Thanks, ${data.name}, your message was sent! We will get back to you within 24 hours.`);
@@ -19,21 +19,24 @@ export const CareerForm: React.FC = () => {
 
     return (
         <>
-            <p className="ml-auto mb-9 w-[179px] text-sm font-extralight leading-5
-                tab:ml-0 tab:mb-[28px] tab:w-[221px] tab:text-[13px] tab:leading-[20px]
-                desk:mb-[14px] desk:w-[234px] desk:text-lg desk:leading-6">
+            <p 
+                className="ml-auto mb-9 w-[179px] text-sm font-extralight leading-5
+                    tab:ml-0 tab:mb-[28px] tab:w-[221px] tab:text-[13px] tab:leading-[20px]
+                    desk:mb-[14px] desk:w-[234px] desk:text-lg desk:leading-6"
+            >
                 Don&apos;t miss your opportunity! 
                 Fill out the form right now and join our team!
             </p>
         
             <form 
-                className="flex flex-col tab:w-[464px] tab:grid tab:grid-cols-2 tab:gap-x-5
-                    desk:w-[606px]"
+                className="flex flex-col tab:w-[464px] tab:grid tab:grid-cols-2 tab:gap-x-5 desk:w-[606px]"
                 onSubmit={handleSubmit(onSubmit)}
+                aria-label="Career"
                 noValidate
             >
                 <div className="flex flex-col">
-                    <div className="flex flex-col relative mb-4 desk:mb-[26px]">
+
+                    <div className="mb-4 flex flex-col relative desk:mb-[26px]">
                         <label htmlFor="career-name" className="label">
                             Full name
                         </label>
@@ -42,6 +45,7 @@ export const CareerForm: React.FC = () => {
                             type="text"
                             autoComplete="name"
                             placeholder="John Smith"
+                            aria-label="Name"
                             className={`input ${errors.name ? 'invalid-input' : ''}`}
                             {...register("name", { required: true })}
                         />
@@ -52,7 +56,7 @@ export const CareerForm: React.FC = () => {
                         }
                     </div>
 
-                    <div className="flex flex-col relative mb-4 desk:mb-[26px]">
+                    <div className="mb-4 flex flex-col relative desk:mb-[26px]">
                         <label htmlFor="career-mail" className="label">
                             E-mail
                         </label>
@@ -61,6 +65,7 @@ export const CareerForm: React.FC = () => {
                             type="email" 
                             autoComplete="email"
                             placeholder="johnsmith@email.com"
+                            aria-label="Email"
                             className={`input ${errors.email ? 'invalid-input' : ''}`}
                             {...register("email", { 
                                 required: true,
@@ -74,7 +79,7 @@ export const CareerForm: React.FC = () => {
                         }
                     </div>
 
-                    <div className="flex flex-col mb-4 desk:mb-[26px]">
+                    <div className="mb-4 flex flex-col desk:mb-[26px]">
                         <label htmlFor="career-position" className="label">
                             Position
                         </label>
@@ -83,17 +88,19 @@ export const CareerForm: React.FC = () => {
                             type="text" 
                             autoComplete="on"
                             placeholder="Movie maker"
+                            aria-label="Career position"
                             className="input"
                             {...register("position")}
                         />
                     </div>
                     
-                    <div className="flex flex-col relative mb-4 desk:mb-[26px]">
+                    <div className="mb-4 flex flex-col relative desk:mb-[26px]">
                         <label 
                             htmlFor="career-phone" 
                             className="label relative
                                 after:absolute after:bottom-[-30px] after:left-2 after:content-['+38']
-                                after:text-[13px] after:font-extralight after:leading-6 after:tracking-wide after:text-white desk:after:text-[20px] desk:after:leading-6"
+                                after:text-[13px] after:font-extralight after:leading-6 after:tracking-wide after:text-white 
+                                desk:after:text-[20px] desk:after:leading-6"
                         >
                             Phone
                         </label>
@@ -102,6 +109,7 @@ export const CareerForm: React.FC = () => {
                             type="tel" 
                             autoComplete="tel"
                             placeholder="(097) 12 34 567"
+                            aria-label="Phone number"
                             className={`input ${errors.phone ? 'invalid-input' : ''} sm-mob:pl-9 desk:pl-[50px]`}
                             {...register("phone", { 
                                 required: true,
@@ -117,14 +125,16 @@ export const CareerForm: React.FC = () => {
                     </div>
                 </div>
                 
-                <div className="flex flex-col mb-4 tab:mb-0">
+                <div className="mb-4 flex flex-col tab:mb-0">
                     <label htmlFor="career-message" className="label">
                         Message
                     </label>
                     <textarea
                         id="career-message"
                         autoComplete="off"
-                        className="input resize-none min-h-[196px] tab:min-h-[244px] desk:w-[292px] desk:min-h-[274px]"
+                        aria-label="Text message"
+                        className="input resize-none min-h-[196px] 
+                            tab:min-h-[244px] desk:w-[292px] desk:min-h-[274px]"
                         {...register("message")}
                     ></textarea>
                 </div>
@@ -134,16 +144,30 @@ export const CareerForm: React.FC = () => {
                         type="checkbox" 
                         id="career-policy" 
                         className="policy-check" 
+                        aria-label="Policy agreement checkbox"
                         {...register("consent", { 
                             required: true,
                         })} 
                     />
                     <label 
                         htmlFor="career-policy"
-                        className="policy-agreement pl-8 relative flex text-xs font-extralight leading-[22px] desk:leading-6"
+                        className="policy-agreement pl-8 relative flex 
+                            text-xs font-extralight leading-[22px] desk:leading-6"
                     >
-                        <Image src="/icons/unchecked.svg" alt="checkbox" width={24} height={24} className="policy-checkbox policy-checkbox-empty"/>
-                        <Image src="/icons/checked.svg" alt="checkbox" width={24} height={24} className="policy-checkbox policy-checkbox-filled"/>
+                        <Image 
+                            src="/icons/unchecked.svg" 
+                            alt="Empty checkbox icon" 
+                            width={24} 
+                            height={24} 
+                            className="policy-checkbox policy-checkbox-empty"
+                        />
+                        <Image 
+                            src="/icons/checked.svg" 
+                            alt="Filled checkbox icon" 
+                            width={24} 
+                            height={24} 
+                            className="policy-checkbox policy-checkbox-filled"
+                        />
                         I confirm my consent to the processing of personal data.
                     </label>
                     {errors.consent && 
@@ -155,7 +179,10 @@ export const CareerForm: React.FC = () => {
 
                 <button 
                     type="submit" 
-                    className="ml-auto mt-4 uppercase text-3xl font-medium leading-8 tab:m-0 tab:absolute tab:bottom-[15px] tab:right-[3px] desk:bottom-[21px] desk:right-0 desk:text-[32px]">
+                    className="ml-auto mt-4 uppercase text-3xl font-medium leading-8 
+                        tab:m-0 tab:absolute tab:bottom-[15px] tab:right-[3px] 
+                        desk:bottom-[21px] desk:right-0 desk:text-[32px]"
+                >
                     Send
                 </button>
         

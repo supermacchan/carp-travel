@@ -1,3 +1,9 @@
+export type HeaderNavProps = {
+    menuOpen: boolean;
+    handleNavLinkClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+    toggleMobileMenu: () => void;
+}
+
 export interface Slide {
     id: number;
     bg: string;
@@ -34,4 +40,15 @@ export type ContactFormData = {
     email: string;
     message: string;
 };
+
+export type GalleryNavProps = {
+    swiperReady: boolean;
+    prevBtnRef: React.RefObject<HTMLButtonElement>;
+    nextBtnRef: React.RefObject<HTMLButtonElement>;
+}
+
+export type GallerySlideProps = {
+    isActive: boolean;
+    img: string
+}
 

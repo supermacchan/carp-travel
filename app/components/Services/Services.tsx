@@ -1,19 +1,20 @@
 "use client"
 
 import { useState, useRef } from "react"
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectFade } from 'swiper/modules';
+import { animated, useTransition } from '@react-spring/web'
+
+import { options, services } from "@/app/utils/staticData/services"
+
 import { Overlay } from "../Overlay/Overlay"
 import { SingleService } from "./SingleService"
 import { ServicesMenu } from "./ServicesMenu"
-import { options, services } from "@/app/utils/staticData/services"
-import { animated, useTransition } from '@react-spring/web'
-
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/effect-fade';
-import './Swiper.scss'
-
-import { EffectFade } from 'swiper/modules';
+import './ServicesSwiper.scss'
 
 export const Services: React.FC = () => {
     const [slideNum, setSlideNum] = useState<number>(1);
@@ -22,7 +23,7 @@ export const Services: React.FC = () => {
     const swiperRef: any = useRef<typeof Swiper | null>(null);
     const bgSwiperRef: any = useRef<typeof Swiper | null>(null);
 
-    const slideNumTransition = useTransition(slideNum, {
+    const transition = useTransition(slideNum, {
         exitBeforeEnter: true,
         from: {
           opacity: 0,
@@ -38,26 +39,10 @@ export const Services: React.FC = () => {
         }),
     })
 
-    const promoTransition = useTransition(promo, {
-        exitBeforeEnter: true,
-        from: {
-          opacity: 0,
-        },
-        enter: {
-          opacity: 1,
-        },
-        leave: {
-          opacity: 0,
-        },
-        config: (item, index, phase) => ({
-            duration: phase === 'enter' ? 1000 : 0, 
-        }),
-    })
-
     const handleMenuOptionSelect = (e: React.MouseEvent<HTMLLIElement>) => {
         const currentOptionIndex = options.indexOf(e.currentTarget.innerHTML);
 
-        // double-click on the selected option
+        // handle double-click on the selected option
         if (currentOptionIndex === -1) {
             return;
         }
@@ -86,11 +71,14 @@ export const Services: React.FC = () => {
         <section 
             id="services"
             className="relative bg-cover bg-no-repeat bg-center transition-all ease-in duration-500 delay-100 
-                before:w-full before:h-[291px] before:absolute before:top-0 before:left-0 before:right-0 before:bg-section-top-gradient before:opacity-75 
+                before:w-full before:h-[291px] before:absolute before:top-0 before:left-0 before:right-0 
+                before:bg-section-top-gradient before:opacity-75 
                 tab:before:h-[247px] desk:before:h-[241px] desk:before:opacity-25 
-                after:w-full after:h-[291px] after:absolute after:bottom-0 after:left-0 after:right-0 after:bg-section-bottom-gradient after:opacity-75
+                after:w-full after:h-[291px] after:absolute after:bottom-0 after:left-0 after:right-0 
+                after:bg-section-bottom-gradient after:opacity-75
                 tab:after:h-[247px] desk:after:h-[241px] desk:after:opacity-25"
         >
+            
             {/* background swiper */}
             <Swiper
                 ref={bgSwiperRef}
@@ -125,13 +113,14 @@ export const Services: React.FC = () => {
                         We <span className="font-medium">offer</span>
                     </h2>
 
+                    {/* slide counter */}
                     <div 
                         className=" mb-[13px] text-right text-[43px] font-thin leading-[43px]
                             tab:mb-0 tab:absolute tab:top-16 tab:left-[515px] tab:text-[67px] tab:leading-[67px]
                             desk:top-[104px] desk:left-[644px] desk:text-[98px] desk:leading-[98px] "
                     >
                         0
-                        {slideNumTransition((style, slideNum) => (
+                        {transition((style, slideNum) => (
                             <animated.span style={style}>{slideNum}</animated.span>
                         ))}
                         /
