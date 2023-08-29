@@ -16,7 +16,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/scss/navigation';
 import './GallerySwiper.scss';
 
-export const Gallery: React.FC = () => {
+const Gallery: React.FC = () => {
     const [swiperReady, setSwiperReady] = useState(false);
 
     const prevBtnRef = useRef<HTMLButtonElement | null>(null);
@@ -71,6 +71,7 @@ export const Gallery: React.FC = () => {
                                 loopPreventsSliding={false}
                                 loopedSlides={1}
                                 grabCursor={true}
+                                wrapperTag="ul"
                                 centeredSlides={true}
                                 slidesPerView={2}
                                 speed={1500}
@@ -108,7 +109,7 @@ export const Gallery: React.FC = () => {
                                 modules={[EffectCoverflow, Navigation]}
                             >
                                 {galleryItems.map(img => 
-                                    <SwiperSlide key={img}>
+                                    <SwiperSlide key={img} tag="li">
                                         {({ isActive }: {isActive: boolean}) => (
                                             <GallerySwiperSlide 
                                                 isActive={isActive}
@@ -126,3 +127,5 @@ export const Gallery: React.FC = () => {
         </section>
     )
 }
+
+export default Gallery;

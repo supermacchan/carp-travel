@@ -16,7 +16,7 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import './ServicesSwiper.scss'
 
-export const Services: React.FC = () => {
+const Services: React.FC = () => {
     const [slideNum, setSlideNum] = useState<number>(1);
     const [promo, setPromo] = useState<string>(services[0].promo);
 
@@ -91,13 +91,14 @@ export const Services: React.FC = () => {
                 allowTouchMove={false}
                 modules={[EffectFade]}
                 grabCursor={false}
+                wrapperTag="ul"
                 style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: -1}}
             >
                 {services.map(s => 
                     <SwiperSlide 
                         key={s.id} 
-                        className="background-slide"
-                        style={{backgroundImage: `url(/images/${s.bg})`}}
+                        className={`background-slide ${s.bg}`}
+                        tag="li"
                     >
                     </SwiperSlide>
                 )}
@@ -139,10 +140,11 @@ export const Services: React.FC = () => {
                         allowTouchMove={false}
                         modules={[EffectFade]}
                         grabCursor={false}
+                        wrapperTag="ul"
                         className="tab:w-full tab:h-full"
                     >
                         {services.map(s => 
-                            <SwiperSlide key={s.id}>
+                            <SwiperSlide key={s.id} tag="li">
                                 <SingleService
                                     image={s.image}
                                     promo={s.promo}
@@ -164,3 +166,5 @@ export const Services: React.FC = () => {
         </section>
     )
 }
+
+export default Services;

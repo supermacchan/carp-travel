@@ -11,7 +11,7 @@ export const options: string[] = [
 export const services: Slide[] = [
     {
       id: 1,
-      bg: 'bg-services-1@2x.jpg',
+      bg: 'bg-bg-services-1-mob tab:bg-bg-services-1-tab desk:bg-bg-services-1-desk',
       image: '/images/services-1@2x.jpg',
       promo: 'Feel the adrenaline rush',
       title: 'ATVs Traveling',
@@ -19,7 +19,7 @@ export const services: Slide[] = [
     },
     {
       id: 2,
-      bg: 'bg-services-2@2x.jpg',
+      bg: 'bg-bg-services-2-mob tab:bg-bg-services-2-tab desk:bg-bg-services-2-desk',
       image: '/images/services-2@2x.jpg',
       promo: 'Destroy your limitations',
       title: 'Rock climbing',
@@ -27,7 +27,7 @@ export const services: Slide[] = [
     },
     {
       id: 3,
-      bg: 'bg-services-3@2x.jpg',
+      bg: 'bg-bg-services-3-mob tab:bg-bg-services-3-tab desk:bg-bg-services-3-desk',
       image: '/images/services-3@2x.jpg',
       promo: 'Get Inspired',
       title: 'Hot air ballooning',
@@ -35,7 +35,7 @@ export const services: Slide[] = [
     },
     {
       id: 4,
-      bg: 'bg-services-4@2x.jpg',
+      bg: 'bg-bg-services-4-mob tab:bg-bg-services-4-tab desk:bg-bg-services-4-desk',
       image: '/images/services-4@2x.jpg',
       promo: 'Overcome your fears',
       title: 'Skydiving',
@@ -43,7 +43,7 @@ export const services: Slide[] = [
     },
     {
       id: 5,
-      bg: 'bg-services-5@2x.jpg',
+      bg: 'bg-bg-services-5-mob tab:bg-bg-services-5-tab desk:bg-bg-services-5-desk',
       image: '/images/services-5@2x.jpg',
       promo: 'Trust the flow',
       title: 'Rafting',

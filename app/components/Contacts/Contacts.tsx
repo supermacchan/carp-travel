@@ -2,7 +2,7 @@ import { Overlay } from "../Overlay/Overlay"
 import { ContactForm } from "./ContactForm"
 import { ContactInfo } from "./ContactInfo"
 
-export const Contacts: React.FC = () => {
+const Contacts: React.FC = () => {
     return (
         <section 
             id="contacts" 
@@ -35,3 +35,5 @@ export const Contacts: React.FC = () => {
         </section>
     )
 }
+
+export default Contacts;

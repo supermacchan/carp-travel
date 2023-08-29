@@ -4,7 +4,7 @@ import { scrollToSection } from "@/app/utils/scroll"
 
 import { Overlay } from "../Overlay/Overlay"
 
-export const Hero: React.FC = () => {
+const Hero: React.FC = () => {
 
     const handleButtonClick = () => {
         scrollToSection('contacts');
@@ -105,3 +105,5 @@ export const Hero: React.FC = () => {
         </section>
     )
 }
+
+export default Hero;

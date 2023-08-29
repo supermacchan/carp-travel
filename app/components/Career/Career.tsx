@@ -7,7 +7,7 @@ import { CareerForm } from "./CareerForm"
 
 import './Career.scss'
 
-export const Career: React.FC = () => {
+const Career: React.FC = () => {
     const [isMobile, setIsMobile] = useState<boolean>(false);
     const [windowWidth, setWindowWidth] = useState<number | null>(null);
 
@@ -91,3 +91,5 @@ export const Career: React.FC = () => {
         </>
     )
 }
+
+export default Career;

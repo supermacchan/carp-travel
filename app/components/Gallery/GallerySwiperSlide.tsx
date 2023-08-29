@@ -6,7 +6,7 @@ export const GallerySwiperSlide: React.FC<GallerySlideProps> = ({
   isActive, img
 }) => {
   return (
-    <li
+    <div
       className={`relative right-8 desk:right-[-13px] w-[415px] desk:w-[606px] h-[294px] desk:h-[429px] 
       ${isActive ? 'desk:right-[-20px]' : 'opacity-75'}`}
     >
@@ -24,6 +24,6 @@ export const GallerySwiperSlide: React.FC<GallerySlideProps> = ({
             transition-opacity ease-in duration-300 
             ${isActive ? 'opacity-0' : 'opacity-100'}`}
       ></div>
-    </li>
+    </div>
   );
 };

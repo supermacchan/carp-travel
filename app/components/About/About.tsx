@@ -1,6 +1,6 @@
 import { Overlay } from "../Overlay/Overlay"
 
-export const About: React.FC = () => {
+const About: React.FC = () => {
     return (
         <section 
             id="about" 
@@ -75,3 +75,5 @@ export const About: React.FC = () => {
         </section>
     )
 }
+
+export default About;

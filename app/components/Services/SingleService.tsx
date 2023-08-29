@@ -5,7 +5,7 @@ import { ServiceProps } from "@/app/utils/types"
 export const SingleService: React.FC<ServiceProps> = ({image, promo, title, text}) => {
 
     return (
-        <li>
+        <>
             <div 
                 className="mb-3 w-[280px] h-[213px] 
                     tab:mb-0 tab:w-[463px] tab:h-[370px] tab:absolute tab:left-0 tab:top-[50px]
@@ -36,6 +36,6 @@ export const SingleService: React.FC<ServiceProps> = ({image, promo, title, text
             >
                 {text}
             </p>
-        </li>
+        </>
     )
 }
