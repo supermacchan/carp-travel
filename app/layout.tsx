@@ -26,6 +26,14 @@ export const metadata: Metadata = {
       type: 'image/svg',
     },
   ],
+  openGraph: {
+    type: 'website',
+    url: 'https://carp-travel-supermacchan.vercel.app/',
+    title: 'CarpTravel',
+    description: 'Uncover Carpathian’s Secrets',
+    siteName: 'CarpTravel',
+    images: [{ url: '/ogp/logo.jpg' }, { url: '/ogp/logo.png' }],
+  },
 }
 
 export default function RootLayout({
