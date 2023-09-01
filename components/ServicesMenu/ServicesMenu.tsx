@@ -22,8 +22,8 @@ export const ServicesMenu: React.FC<ServiceMenuProps> = ({slideNum, promo, handl
 
     return (
         <ul 
-            className="w-[187px] absolute bottom-[210px] left-5 z-10 flex flex-col gap-4 text-xl font-extralight leading-[17px] uppercase
-                tab:w-[204px] tab:absolute tab:bottom-auto tab:top-[182px] tab:left-[515px] tab:text-[22px] tab:leading-[18px]
+            className="w-[189px] absolute bottom-[210px] left-5 z-10 flex flex-col gap-4 text-xl font-extralight leading-[17px] uppercase
+                tab:w-[206px] tab:absolute tab:bottom-auto tab:top-[182px] tab:left-[515px] tab:text-[22px] tab:leading-[18px]
                 desk:w-[255px] desk:left-[644px] desk:gap-6 desk:top-[244px] desk:text-[28px] desk:leading-[24px]"
         >
             {options.map(option => 

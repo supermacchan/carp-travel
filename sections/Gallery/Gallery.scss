@@ -1,12 +1,12 @@
 .gallery {
-  background-image: image-set(url("/images/bg-gallery-mob.jpg") 1x,url("/images/bg-gallery-mob@2x.jpg") 2x);
+  background-image: image-set(url("/images/bg-gallery-mob.webp") 1x,url("/images/bg-gallery-mob@2x.webp") 2x);
 
   @media screen and (min-width: 768px) {
-      background-image: image-set(url("/images/bg-gallery-tab.jpg") 1x,url("/images/bg-gallery-tab@2x.jpg") 2x);
+      background-image: image-set(url("/images/bg-gallery-tab.webp") 1x,url("/images/bg-gallery-tab@2x.webp") 2x);
   }
 
   @media screen and (min-width: 1280px) {
-      background-image: image-set(url("/images/bg-gallery-desk.jpg") 1x,url("/images/bg-gallery-desk@2x.jpg") 2x);
+      background-image: image-set(url("/images/bg-gallery-desk.webp") 1x,url("/images/bg-gallery-desk@2x.webp") 2x);
   }
 
   &::before {

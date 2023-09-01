@@ -7,7 +7,7 @@ export const GallerySwiperSlide: React.FC<GallerySlideProps> = ({
 }) => {
   return (
     <div
-      className={`relative right-8 desk:right-[-13px] w-[415px] desk:w-[606px] h-[294px] desk:h-[429px] 
+      className={`relative right-8 desk:right-[-12px] w-[415px] desk:w-[606px] h-[294px] desk:h-[429px] 
       ${isActive ? 'desk:right-[-20px]' : 'opacity-75'}`}
     >
       <Image
