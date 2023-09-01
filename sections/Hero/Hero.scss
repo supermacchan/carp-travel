@@ -1,0 +1,11 @@
+.hero {
+    background-image: image-set(url("/images/bg-hero-mob.jpg") 1x,url("/images/bg-hero-mob@2x.jpg") 2x);
+
+    @media screen and (min-width: 768px) {
+        background-image: image-set(url("/images/bg-hero-tab.jpg") 1x,url("/images/bg-hero-tab@2x.jpg") 2x);
+    }
+
+    @media screen and (min-width: 1280px) {
+        background-image: image-set(url("/images/bg-hero-desk.jpg") 1x,url("/images/bg-hero-desk@2x.jpg") 2x);
+    }
+}

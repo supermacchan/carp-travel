@@ -5,6 +5,13 @@
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-rgb: 0, 0, 0;
+
+  --overlay: 'rgba(2, 15, 8, 0.50)';
+  --overlay-75: 'rgba(2, 15, 8, 0.75)';
+  --overlay-85: 'rgba(2, 15, 8, 0.85)';
+
+  --section-top-gradient: linear-gradient(180deg, #002426 0%, rgba(0, 37, 49, 0.00) 100%);
+  --section-bottom-gradient: linear-gradient(0deg, #002426 0%, rgba(0, 37, 49, 0.00) 100%);
 }
 
 body {
@@ -52,7 +59,7 @@ body {
 }
 
 .nav-link {
-  @apply border-b-[1px] border-transparent 
+  @apply capitalize border-b-[1px] border-transparent 
   hover:border-white/75 focus:border-white/75 
   transition-all duration-200 ease-in
 }

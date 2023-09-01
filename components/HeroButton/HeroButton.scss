@@ -1,0 +1,57 @@
+.hero-button {
+    &::before {
+        content: '';
+
+        width: 42px;
+        height: 53px;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        background-image: url('/icons/mob-btn-fr-left.svg');
+        opacity: 1;
+
+        @media screen and (min-width: 768px) {
+            width: 35px;
+            height: 50px;
+
+            background-image: url('/icons/tab-btn-fr-left.svg');
+        }
+
+        @media screen and (min-width: 1280px) {
+            width: 44px;
+            height: 71px;
+
+            background-image: url('/icons/desk-btn-fr-left.svg');
+        }
+    }
+
+    &::after {
+        content: '';
+
+        width: 42px;
+        height: 53px;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        background-image: url('/icons/mob-btn-fr-right.svg');
+        opacity: 1;
+
+        @media screen and (min-width: 768px) {
+            width: 35px;
+            height: 50px;
+
+            background-image: url('/icons/tab-btn-fr-right.svg');
+        }
+
+        @media screen and (min-width: 1280px) {
+            width: 44px;
+            height: 71px;
+
+            background-image: url('/icons/desk-btn-fr-right.svg');
+        }
+    }
+}

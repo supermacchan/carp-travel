@@ -1,0 +1,33 @@
+.phone {
+    padding-left: 36px;
+
+    @media screen and (min-width: 1280px) {
+        padding-left: 50px;
+    }
+}
+
+.phone-label {
+    &::after {
+        content: '+38';
+
+        width: 36px;
+
+        position: absolute;
+        bottom: 2px;
+        left: 8px;
+
+        font-size: 13px;
+        font-weight: 200;
+        line-height: 24px;
+        letter-spacing: 0.025em;
+
+        color: #fff;
+
+        @media screen and (min-width: 1280px) {
+            width: 50px;
+
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+}

@@ -1,0 +1,137 @@
+// service section gradient styles
+
+.services {
+    &::before {
+        content: '';
+
+        width: 100%;
+        height: 291px;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        opacity: 0.75;
+
+        background: var(--section-top-gradient);
+
+        @media screen and (min-width: 768px) {
+            height: 247px;
+        }
+
+        @media screen and (min-width: 1280px) {
+            height: 241px;
+
+            opacity: 0.25;
+        }
+    }
+
+    &::after {
+        content: '';
+
+        width: 100%;
+        height: 291px;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        opacity: 0.75;
+
+        background: var(--section-bottom-gradient);
+
+        @media screen and (min-width: 768px) {
+            height: 247px;
+        }
+
+        @media screen and (min-width: 1280px) {
+            height: 241px;
+
+            opacity: 0.25;
+        }
+    }
+}
+            
+// swiper base styles
+
+.swiper-wrapper .swiper-slide {
+    width: 100%;
+    height: 595px;
+
+    @media screen and (min-width: 768px) {
+        height: 100%;
+    }
+}
+
+.swiper-wrapper .background-slide {
+    width: 100%;
+    height: 100%;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+// service bg styles  
+
+.service-1 {
+    background-image: image-set(url("/images/bg-services-1-mob.jpg") 1x,url("/images/bg-services-1-mob@2x.jpg") 2x);
+    
+    @media screen and (min-width: 768px) {
+        background-image: image-set(url("/images/bg-services-1-tab.jpg") 1x,url("/images/bg-services-1-tab@2x.jpg") 2x);
+    }
+
+    @media screen and (min-width: 1280px) {
+        background-image: image-set(url("/images/bg-services-1-desk.jpg") 1x,url("/images/bg-services-1-desk@2x.jpg") 2x);
+    }
+}
+
+.service-2 {
+    background-image: image-set(url("/images/bg-services-2-mob.jpg") 1x,url("/images/bg-services-2-mob@2x.jpg") 2x);
+    
+    @media screen and (min-width: 768px) {
+        background-image: image-set(url("/images/bg-services-2-tab.jpg") 1x,url("/images/bg-services-2-tab@2x.jpg") 2x);
+    }
+
+    @media screen and (min-width: 1280px) {
+        background-image: image-set(url("/images/bg-services-2-desk.jpg") 1x,url("/images/bg-services-2-desk@2x.jpg") 2x);
+    }
+}
+
+.service-3 {
+    background-image: image-set(url("/images/bg-services-3-mob.jpg") 1x,url("/images/bg-services-3-mob@2x.jpg") 2x);
+    
+    @media screen and (min-width: 768px) {
+        background-image: image-set(url("/images/bg-services-3-tab.jpg") 1x,url("/images/bg-services-3-tab@2x.jpg") 2x);
+    }
+
+    @media screen and (min-width: 1280px) {
+        background-image: image-set(url("/images/bg-services-3-desk.jpg") 1x,url("/images/bg-services-3-desk@2x.jpg") 2x);
+    }
+}
+
+.service-4 {
+    background-image: image-set(url("/images/bg-services-4-mob.jpg") 1x,url("/images/bg-services-4-mob@2x.jpg") 2x);
+    
+    @media screen and (min-width: 768px) {
+        background-image: image-set(url("/images/bg-services-4-tab.jpg") 1x,url("/images/bg-services-4-tab@2x.jpg") 2x);
+    }
+
+    @media screen and (min-width: 1280px) {
+        background-image: image-set(url("/images/bg-services-4-desk.jpg") 1x,url("/images/bg-services-4-desk@2x.jpg") 2x);
+    }
+}
+
+.service-5 {
+    background-image: image-set(url("/images/bg-services-5-mob.jpg") 1x,url("/images/bg-services-5-mob@2x.jpg") 2x);
+    
+    @media screen and (min-width: 768px) {
+        background-image: image-set(url("/images/bg-services-5-tab.jpg") 1x,url("/images/bg-services-5-tab@2x.jpg") 2x);
+    }
+
+    @media screen and (min-width: 1280px) {
+        background-image: image-set(url("/images/bg-services-5-desk.jpg") 1x,url("/images/bg-services-5-desk@2x.jpg") 2x);
+    }
+}
