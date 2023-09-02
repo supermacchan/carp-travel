@@ -2,8 +2,12 @@ import Image from "next/image"
 
 import { ServiceProps } from "@/utils/types"
 
-export const ServiceInfo: React.FC<ServiceProps> = ({image, promo, title, text}) => {
-
+export const ServiceInfo: React.FC<ServiceProps> = ({
+    image, 
+    promo, 
+    title, 
+    text
+}) => {
     return (
         <>
             <div 

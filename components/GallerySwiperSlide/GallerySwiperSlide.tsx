@@ -3,7 +3,8 @@ import Image from "next/image"
 import { GallerySlideProps } from "@/utils/types";
 
 export const GallerySwiperSlide: React.FC<GallerySlideProps> = ({
-  isActive, img
+  isActive, 
+  img
 }) => {
   return (
     <div

@@ -8,7 +8,7 @@ import { ContactFormInfo } from "@/utils/staticData/contacts";
 
 import { FormButton } from "@/components/FormButton/FormButton";
 import { FormInput } from "@/components/FormInput/FormInput";
-import { FormTextArea } from "../FormTextArea/FormTextArea";
+import { FormTextArea } from "@/components/FormTextArea/FormTextArea";
 
 export const ContactForm: React.FC = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();

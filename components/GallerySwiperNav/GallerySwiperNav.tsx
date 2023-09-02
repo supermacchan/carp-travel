@@ -1,6 +1,10 @@
 import { GalleryNavProps } from "@/utils/types";
 
-export const GallerySwiperNav: React.FC<GalleryNavProps> = ({swiperReady, prevBtnRef, nextBtnRef}) => {
+export const GallerySwiperNav: React.FC<GalleryNavProps> = ({
+  swiperReady, 
+  prevBtnRef, 
+  nextBtnRef
+}) => {
   return (
     <div
       className={`hidden tab:px-[38px] tab:w-[704px] tab:absolute tab:bottom-[81px] tab:z-20 

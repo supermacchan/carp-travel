@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 
 import { scrollToSection } from "@/utils/scroll"
 
-import { HeaderNav } from "../../components/HeaderNav/HeaderNav"
+import { HeaderNav } from "@/components/HeaderNav/HeaderNav"
 
 export const Header: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -70,7 +70,7 @@ export const Header: React.FC = () => {
     }
 
     return (
-        <header className="relative z-20 bg-header-gradient bg-overlay">
+        <header className="relative z-20 bg-header-gradient">
             <div
                 className="px-5 py-9 mx-auto max-w-screen-lg-mob relative flex justify-between items-center
                 tab:px-8 tab:pt-[25px] tab:pb-[66px] tab:w-[768px] tab:max-w-screen-tab

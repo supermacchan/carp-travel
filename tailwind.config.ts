@@ -28,9 +28,6 @@ const config: Config = {
       current: 'currentColor',
       'error-red': '#FF5757',
       'white': '#FFF',
-      'overlay': 'rgba(2, 15, 8, 0.50)',
-      'overlay-75': 'rgba(2, 15, 8, 0.75)',
-      'overlay-85': 'rgba(2, 15, 8, 0.85)',
     }
   },
   plugins: [],

@@ -1,12 +1,12 @@
 .career {
-    background-image: image-set(url("/images/bg-career-mob.webp") 1x,url("/images/bg-career-mob@2x.webp") 2x);
+    background-image: var(--overlay-50), image-set(url("/images/bg-career-mob.webp") 1x,url("/images/bg-career-mob@2x.webp") 2x);
 
     @media screen and (min-width: 768px) {
-        background-image: image-set(url("/images/bg-career-tab.webp") 1x,url("/images/bg-career-tab@2x.webp") 2x);
+        background-image: var(--overlay-75), image-set(url("/images/bg-career-tab.webp") 1x,url("/images/bg-career-tab@2x.webp") 2x);
     }
 
     @media screen and (min-width: 1280px) {
-        background-image: image-set(url("/images/bg-career-desk.webp") 1x,url("/images/bg-career-desk@2x.webp") 2x);
+        background-image: var(--overlay-75), image-set(url("/images/bg-career-desk.webp") 1x,url("/images/bg-career-desk@2x.webp") 2x);
     }
 
     &::before {
@@ -48,6 +48,10 @@
             display: none;
         }
     }
+}
+
+.career-mob {
+    background-image: var(--overlay-75), image-set(url("/images/bg-career-mob.webp") 1x,url("/images/bg-career-mob@2x.webp") 2x);
 }
 
 // custom checkbox styles

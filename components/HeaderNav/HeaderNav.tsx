@@ -48,47 +48,8 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
                   </button>
                 </li>
                 )}
-                {/* <li>
-                  <button
-                    onClick={e => handleNavLinkClick(e)}
-                    className="nav-link"
-                  >
-                    About
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={e => handleNavLinkClick(e)}
-                    className="nav-link"
-                  >
-                    Services
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={e => handleNavLinkClick(e)}
-                    className="nav-link"
-                  >
-                    Career
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={e => handleNavLinkClick(e)}
-                    className="nav-link"
-                  >
-                    Gallery
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={e => handleNavLinkClick(e)}
-                    className="nav-link"
-                  >
-                    Contacts
-                  </button>
-                </li> */}
               </ul>
+              
               <button
                 type="button"
                 onClick={toggleMobileMenu}

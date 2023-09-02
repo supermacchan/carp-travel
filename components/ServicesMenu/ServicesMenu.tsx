@@ -3,7 +3,11 @@ import { animated, useTransition } from "@react-spring/web"
 import { options } from "@/utils/staticData/services"
 import { ServiceMenuProps } from "@/utils/types"
 
-export const ServicesMenu: React.FC<ServiceMenuProps> = ({slideNum, promo, handleMenuOptionSelect}) => {
+export const ServicesMenu: React.FC<ServiceMenuProps> = ({
+    slideNum, 
+    promo, 
+    handleMenuOptionSelect
+}) => {
     const transition = useTransition(promo, {
         exitBeforeEnter: true,
         from: {
