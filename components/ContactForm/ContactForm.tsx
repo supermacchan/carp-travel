@@ -1,7 +1,8 @@
 "use client"
 
-import { toast } from "react-hot-toast"
+import { toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
+import useFormPersist from 'react-hook-form-persist';
 
 import { FormData } from "@/utils/types";
 import { ContactFormInfo } from "@/utils/staticData/contacts";
@@ -11,10 +12,15 @@ import { FormInput } from "@/components/FormInput/FormInput";
 import { FormTextArea } from "@/components/FormTextArea/FormTextArea";
 
 export const ContactForm: React.FC = () => {
-    const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
+    const { register, handleSubmit, reset, watch, setValue, formState: { errors } } = useForm<FormData>();
+
+    useFormPersist("contactFormData", {
+        watch, 
+        setValue,
+    });
 
     const { formContent: { inputs, textarea } } = ContactFormInfo;
-    
+
     const onSubmit = (data: FormData) => {
         reset();
         toast.success(`Thanks, ${data.name}, your message was sent! We will get back to you within 24 hours.`);

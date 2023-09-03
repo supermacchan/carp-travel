@@ -32,7 +32,7 @@ export const FormInput: React.FC<FormInputProps> = ({
                 placeholder={inputInfo.placeholder}
                 aria-label={inputInfo.aria}
                 className={`
-                    input 
+                    input ${inputStyles}
                     ${errors[inputInfo.formData] ? 'invalid-input' : ''}
                     ${inputInfo.id === 'career-phone' ? 'phone' : ''}
                 `}

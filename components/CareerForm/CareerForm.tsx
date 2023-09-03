@@ -1,7 +1,8 @@
 "use client"
 
-import { toast } from "react-hot-toast"
+import { toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
+import useFormPersist from 'react-hook-form-persist';
 
 import { FormData } from "@/utils/types";
 import { CareerFormInfo } from "@/utils/staticData/career";
@@ -12,7 +13,12 @@ import { FormPolicy } from "@/components/FormPolicy/FormPolicy";
 import { FormButton } from "@/components/FormButton/FormButton";
 
 export const CareerForm: React.FC = () => {
-    const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
+    const { register, handleSubmit, reset, watch, setValue, formState: { errors } } = useForm<FormData>();
+
+    useFormPersist("careerFormData", {
+        watch, 
+        setValue,
+    });
 
     const { description, formContent: { inputs, textarea, policy } } = CareerFormInfo;
     
